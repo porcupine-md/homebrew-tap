@@ -1,0 +1,21 @@
+class AnoaBrowserLinux < Formula
+  desc "Headless browser built on Qt6/QWebEngine with CDP support"
+  homepage "https://github.com/porcupine-md/anoa-browser"
+  version "0.3.0"
+  sha256 "75b889b732e1156820f0644758fbe209628f20296a975b66d1ae2842893346ef"
+  license "MIT"
+
+  url "https://github.com/porcupine-md/anoa-browser/releases/download/v#{version}/anoa-browser-linux-x86_64.tar.gz"
+
+  def install
+    libexec.install Dir["*"]
+    # anoa-browser.sh sets LD_LIBRARY_PATH / QtWebEngine paths relative to its
+    # own (symlink-resolved) location, so a plain symlink is enough.
+    bin.install_symlink libexec/"anoa-browser.sh" => "anoa-browser"
+    bin.install_symlink libexec/"anoa-term"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/anoa-browser --version")
+  end
+end
