@@ -1,6 +1,6 @@
 cask "anoa-browser" do
-  version "0.3.1"
-  sha256 "b00aa8029adb1259ae868c468cb42db18915096b849e99b1bf59b8eacd40e052"
+  version "0.4.0"
+  sha256 "2b1c99cf5a2e7d4ec63da65c12153e61d1beb907d806e82f9cdb7e49d9bb3791"
 
   # Universal (x86_64 + arm64) build — one archive for Intel and Apple Silicon.
   url "https://github.com/porcupine-md/anoa-browser/releases/download/v#{version}/anoa-browser-macos-universal.tar.gz"
@@ -12,10 +12,10 @@ cask "anoa-browser" do
 
   app "anoa-browser.app"
 
-  # Both binaries live inside the bundle so they are covered by the app's
-  # signature and notarization ticket.
+  # The binary lives inside the bundle so it is covered by the app's signature
+  # and notarization ticket. The terminal viewer is a subcommand of it
+  # (`anoa-browser terminal`), so one shim covers both entry points.
   binary "#{appdir}/anoa-browser.app/Contents/MacOS/anoa-browser"
-  binary "#{appdir}/anoa-browser.app/Contents/MacOS/anoa-term"
 
   # Safety net: strip com.apple.quarantine before the app is ever launched.
   # For a properly notarized+stapled release this is a harmless no-op (Gatekeeper
