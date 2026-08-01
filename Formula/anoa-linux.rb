@@ -1,8 +1,8 @@
 class AnoaBrowserLinux < Formula
   desc "Headless browser built on Qt6/QWebEngine with CDP support"
   homepage "https://github.com/porcupine-md/anoa-browser"
-  version "0.6.0"
-  sha256 "c0010c29d19666e3870f481d9e171a0d298c853b1c8664857332b2dc422a993f"
+  version "0.6.1"
+  sha256 "25c01c588d58918da11292a0f2f87a39993450e7b4fa76dff160bdfe82efae0a"
   license "MIT"
 
   url "https://github.com/porcupine-md/anoa-browser/releases/download/v#{version}/anoa-linux-x86_64.tar.gz"
