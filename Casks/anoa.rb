@@ -1,6 +1,6 @@
 cask "anoa" do
-  version "0.7.2"
-  sha256 "fa798f554fbc44ad2fc955c961953cfe399f6064e3e5f6cdf8286bef97a68cb5"
+  version "0.7.3"
+  sha256 "cb093f3a0e9a52bbf24d0cadc16b6748a9c22040bf6d8b4287b01955821fc7d7"
 
   # Universal (x86_64 + arm64) build — one archive for Intel and Apple Silicon.
   url "https://github.com/porcupine-md/anoa-browser/releases/download/v#{version}/anoa-macos-universal.tar.gz"
