@@ -5,19 +5,19 @@
 class AnoaLinux < Formula
   desc "Headless browser built on Qt6/QWebEngine with CDP support"
   homepage "https://github.com/porcupine-md/anoa-browser"
-  version "0.19.0"
+  version "0.19.1"
   license "MIT"
 
   # Two bundles, picked by the machine doing the installing. Before this, an
   # arm64 Linux got the x86_64 tarball and a binary it could not exec.
   on_intel do
     url "https://github.com/porcupine-md/anoa-browser/releases/download/v#{version}/anoa-linux-x86_64.tar.gz"
-    sha256 "f3cf897169a0ff27d3881fc1a50012bddd59000ff4b90d22c48caa6d6d1e53f1"
+    sha256 "376bd5652391ec22a6e828a78755cee53bf66c593c23276f0cca8a2344e47c19"
   end
 
   on_arm do
     url "https://github.com/porcupine-md/anoa-browser/releases/download/v#{version}/anoa-linux-aarch64.tar.gz"
-    sha256 "866fc43c0a1739a70c1cb716c7e571acf51e2c7561f5dac118ef551c9ea46a12"
+    sha256 "98f001f55a9fa65017c0a84ed495044db2051ba9e74307f7c60efd771949c050"
   end
 
   def install
